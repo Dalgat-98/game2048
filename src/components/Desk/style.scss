@@ -1,0 +1,85 @@
+.game {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 10px;
+
+  header {
+    width: 74vmin;
+  }
+
+  .game__info {
+    width: 100%;
+    display: flex;
+    // justify-content: space-between;
+    column-gap: 10px;
+
+    .game__all-score {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 10px 20px;
+
+      font-size: 24px;
+      font-weight: bold;
+      color: #fff;
+
+      background-color: #333;
+      border-radius: 5px;
+    }
+
+    .game__max-score {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 10px 20px;
+
+      font-size: 24px;
+      font-weight: bold;
+      color: #fff;
+
+      background-color: #333;
+      border-radius: 5px;
+    }
+
+    .game__button {
+      padding: 10px 15px;
+
+      font-size: 24px;
+      font-weight: bold;
+      color: #fff;
+
+      background-color: #333;
+      border-radius: 5px;
+
+      cursor: pointer;
+    }
+
+    .game__button-new-game {
+      margin-left: auto;
+    }
+  }
+
+  .game__desk {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(4, 16vmin);
+    grid-template-rows: repeat(4, 16vmin);
+    gap: 2vmin;
+
+    padding: 2vmin;
+
+    border-radius: 1vmin;
+    background-color: #bbada0;
+  }
+
+  .button-time {
+    margin-left: 10px;
+    padding: 10px 15px;
+    color: #fff;
+    background-color: #333;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+}

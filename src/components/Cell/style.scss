@@ -1,0 +1,88 @@
+.cell {
+  --cell-size: 16vmin;
+  --cell-gap: 2vmin;
+
+  position: absolute;
+  top: calc(var(--x) * (var(--cell-size) + var(--cell-gap)) + var(--cell-gap));
+  left: calc(var(--y) * (var(--cell-size) + var(--cell-gap)) + var(--cell-gap));
+
+  width: 16vmin;
+  height: 16vmin;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-family: var(--font-family);
+  font-size: 28px;
+  font-weight: 900;
+
+  background-color: #cdc1b3;
+  border-radius: 1vmin;
+
+  // transition: 1s;
+}
+
+.cell-full {
+  background-color: hsl(28, 70%, var(--bg-color));
+  color: hsl(20, 25%, var(--text-color));
+}
+
+.cell-show {
+  animation: show 200ms;
+}
+
+@keyframes show {
+  0% {
+    opacity: 0.5;
+    transform: scale(0);
+  }
+}
+
+.cell-2 {
+  background-color: #eee4da;
+  color: #746d64;
+}
+.cell-4 {
+  background-color: #ece0c8;
+  color: #746d64;
+}
+.cell-8 {
+  background-color: #f2b179;
+  color: #f9f6f1;
+}
+.cell-16 {
+  background-color: #f59563;
+  color: #f9f6f1;
+}
+.cell-32 {
+  background-color: #f57c5f;
+  color: #f9f6f1;
+}
+.cell-64 {
+  background-color: #f65d3b;
+  color: #f9f6f1;
+}
+.cell-128 {
+  background-color: #edce71;
+  color: #f9f6f1;
+}
+.cell-256 {
+  background-color: #edce71;
+  color: #f9f6f1;
+}
+.cell-512 {
+  background-color: #eecb56;
+  color: #f9f6f1;
+}
+.cell-1024 {
+  background-color: #edc53f;
+  color: #f9f6f1;
+}
+.cell-2048 {
+  background-color: #eec22e;
+  color: #f9f6f1;
+}
+.cell-big {
+  background-color: #3d3a33;
+  color: #f9f6f1;
+}
