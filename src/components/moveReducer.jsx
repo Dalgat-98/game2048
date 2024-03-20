@@ -20,7 +20,7 @@ export default function stateReducer(state, action) {
           <Cell
             key={i}
             positionColRow={[Math.floor(i / countRows), i % countColumns]}
-            startScore={0}
+            score={0}
           />
         );
       }
@@ -40,7 +40,7 @@ export default function stateReducer(state, action) {
 
       //Создаем массив пустых клеток из числа всех(16ти) клеток
       for (let i = 0; i < state.cells.length; i++) {
-        if (state.cells[i].props.startScore === 0) {
+        if (state.cells[i].props.score === 0) {
           emptyCells.push(state.cells[i]);
         }
       }
@@ -68,7 +68,7 @@ export default function stateReducer(state, action) {
             <Cell
               key={state.cells[i].props.positionColRow}
               positionColRow={state.cells[i].props.positionColRow}
-              startScore={randomValueCell}
+              score={randomValueCell}
               // className={"cell-show cell-full"}
               className={
                 randomValueCell === 2 ? "cell-2 cell-show" : "cell-4 cell-show"
@@ -100,12 +100,12 @@ export default function stateReducer(state, action) {
         const mas = [];
         for (let j = 0; j < countColumns; j++) {
           if (moveDirection === "ArrowDown" || moveDirection === "ArrowUp") {
-            mas.push(state.cells[i * countRows + j].props.startScore);
+            mas.push(state.cells[i * countRows + j].props.score);
           } else if (
             moveDirection === "ArrowRight" ||
             moveDirection === "ArrowLeft"
           ) {
-            mas.push(state.cells[i + j * countColumns].props.startScore);
+            mas.push(state.cells[i + j * countColumns].props.score);
           }
         }
 
@@ -119,7 +119,7 @@ export default function stateReducer(state, action) {
               <Cell
                 key={[state.countMove, [i, j]]}
                 positionColRow={[i, j]}
-                startScore={mas[j]}
+                score={mas[j]}
                 // className={mas[j] > 0 ? "cell-full" : "cell"}
                 className={mas[j] <= 2024 ? " cell-" + mas[j] : "cell-big"}
               />
@@ -134,7 +134,7 @@ export default function stateReducer(state, action) {
               <Cell
                 key={[state.countMove, [j, i]]}
                 positionColRow={[j, i]}
-                startScore={mas[j]}
+                score={mas[j]}
                 // className={mas[j] > 0 ? "cell-full" : "cell"}
                 className={mas[j] <= 2024 ? " cell-" + mas[j] : "cell-big"}
               />
@@ -249,7 +249,7 @@ export default function stateReducer(state, action) {
           <Cell
             key={localState.cells[i].positionColRow}
             positionColRow={localState.cells[i].positionColRow}
-            startScore={localState.cells[i].startScore}
+            score={localState.cells[i].score}
             className={localState.cells[i].className}
           />
         );
